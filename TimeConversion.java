@@ -53,14 +53,11 @@ public class TimeConversion {
 
             }
 
-            //TODO: HasNext method can only be used with Scanner, while loop not needed here.
+            // TODO: Review how to use Stringjoiner at end of program to return back a completed String
+
             StringJoiner militaryTime = new StringJoiner(":");
             militaryTime.add(val);
             // 3. t/f the variable instantiated with stringjoiner will now become the update string value.
-
-
-            // TODO: Review how to use Stringjoiner at end of program to return back a completed String
-
 
 
             return militaryTime.toString();
