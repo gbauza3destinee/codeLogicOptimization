@@ -15,51 +15,71 @@ public class TimeConversion {
 
         String[] inputVals = s.split(":", 3);
 
-        inputVals[1] = hourValue;
-        //TODO: L18 missing int value when referencing an array
+        // 1. Intention- Save whatever value is in index 1, since I know it will be our hour value.
 
-        int hourValue = Integer.parseInt(hourValue);
+       // OG : Fixed the structure of the code, as it makes it so that "string" is hardcoded into index 1 -> inputVals[1] = "hourValue";
+        // rather than EXTRACTING value at index 1.
 
-        int hourValue = Parse.int(hourValue);
-        //TODO: L23 Wrong format of Integer.parseInt() method - review special case
+        String hour = inputVals[1];
+
+        System.out.println(hour);
+        int hourValue = Integer.parseInt(hour);
+
+       //OG: int hourValue = Parse.int(hourValue);
+        // TODO: L23 Wrong format of Integer.parseInt() method - review special case
 
         for(String val : inputVals){
 
-            if (val.equals("PM")){
+           // 1. Or i can save the value of val in first iteration here into a variable
+            // that will be accessible outside of the for loop scope.
 
+            if (val.equals("PM")){
 
                 if (hourValue>= 1){
                     // TODO: call in global variable without extra brackets
 
-                    int convertNum  = Parse.int(hourValue) + 12;
+                    // OG int convertNum  = Parse.int(hourValue) + 12;
+
+                    int convertNum  = hourValue + 12;
+
+
                     //TODO: Wrong use of Integer's parse method again.
 
+                    // 2. Overwrite hour val (index 1) to new math #
                     inputVals[1] = String.valueOf(convertNum);
 
                     // hour value has been solved
-
                 }
 
-
-                //TODO: HasNext method can only be used with Scanner, while loop not needed here.
-
-                    StringJoiner stringjoiner = new StringJoiner(":");
-                    stringjoiner.add(val);
-
-                    // TODO: Review how to use Stringjoiner at end of program to return back a completed String
-
-
-
-                return //whatever StringJoiner generated
-
             }
+
+            //TODO: HasNext method can only be used with Scanner, while loop not needed here.
+            StringJoiner militaryTime = new StringJoiner(":");
+            militaryTime.add(val);
+            // 3. t/f the variable instantiated with stringjoiner will now become the update string value.
+
+
+            // TODO: Review how to use Stringjoiner at end of program to return back a completed String
+
+
+
+            return militaryTime.toString();
+            //whatever StringJoiner generated
 
         }
 
 
 
 
+        return s.substring(0, s.length()-2);
+        // another way to take off PM/AM - s.substring(0, "[a-z]");
+
+        // minus the PM or AM
+
+
     }
+
+
 
 
 
