@@ -3,8 +3,6 @@ import java.util.StringJoiner;
 public class TimeConversion {
 
 
-
-
     /* Attempt OG Version 0000!
      * HackerRank Solving & Analyzing OG Code Solution
      * Instructions: Complete the 'timeConversion' function below.
@@ -25,7 +23,6 @@ public class TimeConversion {
         int hourValue = Parse.int(hourValue);
         //TODO: L23 Wrong format of Integer.parseInt() method - review special case
 
-
         for(String val : inputVals){
 
             if (val.equals("PM")){
@@ -36,8 +33,6 @@ public class TimeConversion {
 
                     int convertNum  = Parse.int(hourValue) + 12;
                     //TODO: Wrong use of Integer's parse method again.
-
-
 
                     inputVals[1] = String.valueOf(convertNum);
 
